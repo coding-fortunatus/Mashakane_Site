@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mashaene</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/sweetalert2.min.css">
+        <link rel="stylesheet" href="boot_style.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container">
+            <a href="#" class="navbar-brand"><img src="images/masa.png" style="width: 50px; height: 50px;" alt=""></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item"><a href="index.html" class="nav-link">Video Gallery</a></li>
+                    <li class="nav-item"><a href="new_web.html" class="nav-link">Team</a></li>
+                </ul>
+                <a href="signup.html" class="btn btn-primary">Sign up</a>
+                <a href="login.html" class="mx-3 btn btn-primary">Login</a>
+            </div>
+        </div>
+    </nav>
+    <h3 class="heading">Video Gallery</h3>
+        <div class="container">
+            <div class="main-video">
+                <div class="video">
+                    <video src="https://drive.google.com/file/d/17zwo1QSxSDBAYQVezdKhY5RgnfVY6KCO/view?usp=drivesdk" controls muted autoplay></video>
+                    <h3 class="title">Here is Video 1</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus itaque maxime a.</p>
+                </div>
+            </div>
+
+            <div class="video-list">
+                <div class="vid active">
+                    <video src="https://drive.google.com/file/d/17zwo1QSxSDBAYQVezdKhY5RgnfVY6KCO/view?usp=drivesdk" muted></video>
+                        <h3 class="title">Here is Video 1</h3>
+                        <p>This is First Video Description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur omnis totam earum.</p>
+                </div>
+                <div class="vid">
+                    <video src="https://drive.google.com/file/d/17l9ZbBIuov_odY2sEztKgNX_aZUBs61X/view?usp=drivesdk" muted></video>
+                    
+                        <h3 class="title">Here is Video 2</h3>
+                        <p>This is Second Video Description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, suscipit facilis.</p>
+                    
+                </div>
+                <div class="vid">
+                    <video src="https://drive.google.com/file/d/17b8zG46IBYiDgTvuE51DkaquNZQWqDs9/view?usp=drivesdk" muted></video>
+                    <h3 class="title">Here is Video 3</h3>
+                    <p>This is Third Video Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium fuga eveniet eius.</p>
+                </div>
+                <div class="vid">
+                    <video src="https://drive.google.com/file/d/17kvmh8sIaHp6FQdI7Fk-CpI0uqmZYn_8/view?usp=drivesdk" muted></video>
+                    <h3 class="title">Here is Video 4</h3>
+                    <p>This is Fourth Video  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, architecto debitis! Veniam!</p>
+                </div>
+                <div class="vid">
+                    <video src="https://drive.google.com/file/d/17utEeFx4sCtAmT17UyltL7CAddzZyz64/view?usp=drivesdk" muted></video>
+                    <h3 class="title">Here is Video 5 </h3>
+                    <p>This is Fifth video Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus dolore reprehenderit mollitia.</p>
+                </div>
+                <div class="vid">
+                    <video src="https://drive.google.com/file/d/180LQ34K3yw9W7trTY01JUOonHVKT09by/view?usp=drivesdk" muted></video>
+                    <h3 class="title">Here is Video 6 </h3>
+                    <p>This is 6th Video Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, totam accusamus.</p>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+
+
+        listVideo.forEach(video => {
+            video.onclick = () =>{
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active'))
+                {
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                    
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
